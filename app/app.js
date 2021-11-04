@@ -477,7 +477,7 @@ function loadListItems (listIndex){
     let listString = `<h1>${LISTS[listIndex].name}</h1>
     <button onclick="loadLists()">Back</button><ul>`;
     $.each(LISTS[listIndex].listItems, function (idx, listItem) {
-        listString += `<li id="${idx}" class="noPointer ${
+        listString += `<li id="${idx}" class="${
             listItem.checked ? "strike" : ""
         }"><input ${
             listItem.checked ? (checked = "checked") : ""
@@ -510,10 +510,12 @@ function deleteList(listIndex){
 function loadLists(){
     let listString = "<h1>List of Lists</h1><ul>";
     $.each(LISTS, function(idx, list){
-        listString += `<li id="${idx}" onclick="loadListItems(${idx})">
+        listString += `<li id="${idx}">
         <span>${list.name}</span>
+        <span class="right">Items: ${list.listItems.length}</span>
         <span class="delete" onclick="deleteList(${idx})">Delete</span>
-        <span class="right">Items: ${list.listItems.length}</span></li>`;
+        <button class="load" onclick="loadListItems(${idx})">Load List</button>
+        </li>`;
     });
     listString += `</ul>
     <div class="addItemInput">

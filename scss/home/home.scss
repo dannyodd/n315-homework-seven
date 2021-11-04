@@ -4,7 +4,6 @@ ul {
     margin: 20px auto;
 }
 li {
-    cursor: pointer;
     list-style-type: none;
     height: 50px;
     width: 600px;
@@ -31,7 +30,7 @@ li.strike {
 
 .right {
     position: absolute;
-    right: 100px;
+    right: 225px;
 }
 
 .delete {
@@ -70,6 +69,7 @@ button {
     cursor: pointer; 
  }
 
- .noPointer {
-     cursor: default;
+ .load {
+     position: absolute;
+     right: 100px;
  }
